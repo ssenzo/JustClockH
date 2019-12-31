@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/txtTime"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:fitsSystemWindows="true"
+        android:keepScreenOn="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"></LinearLayout>
+
+        <TextView
+            android:id="@+id/textCurrentTime"
+            android:layout_width="397dp"
+            android:layout_height="64dp"
+            android:autoText="false"
+            android:background="#000000"
+            android:clickable="false"
+            android:foreground="@color/black_overlay"
+            android:foregroundTint="#000000"
+            android:keepScreenOn="true"
+            android:layerType="none"
+            android:text="Current Time"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textColor="#616170"
+            android:visibility="visible" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</FrameLayout>
