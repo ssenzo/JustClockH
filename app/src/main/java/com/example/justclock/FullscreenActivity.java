@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Display;
@@ -120,7 +121,10 @@ public class FullscreenActivity extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-
+        final TextView tv = (TextView) findViewById(R.id.textCurrentTime);
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/digital-7 (mono).ttf");
+        tv.setTypeface(typeface);
+        tv.setTextSize(130);
         // setTimer
         Timer t = new Timer();
         t.scheduleAtFixedRate(new TimerTask() {
@@ -129,9 +133,9 @@ public class FullscreenActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        TextView tv = (TextView) findViewById(R.id.textCurrentTime);
 
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
                         String currentDateTime = dateFormat.format(new Date());
                         tv.setText(currentDateTime);
 
@@ -146,10 +150,10 @@ public class FullscreenActivity extends AppCompatActivity {
                             int screenHeight = size.x;
                             int screenWidth = size.y;
 
-                            tv.setWidth(20);
+                            tv.setWidth(2000);
                             Random r = new Random();
-                            int newX = (r.nextInt(screenWidth / 3));
-                            int newY = (r.nextInt(screenHeight));
+                            int newX = (r.nextInt(screenWidth / 4));
+                            int newY = (r.nextInt(screenHeight/3));
 
                             tv.setX(newX);
                             tv.setY(newY);

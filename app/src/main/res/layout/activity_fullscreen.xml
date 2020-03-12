@@ -30,8 +30,8 @@
 
         <TextView
             android:id="@+id/textCurrentTime"
-            android:layout_width="397dp"
-            android:layout_height="64dp"
+            android:layout_width="590dp"
+            android:layout_height="103dp"
             android:autoText="false"
             android:background="#000000"
             android:clickable="false"
@@ -40,8 +40,11 @@
             android:keepScreenOn="true"
             android:layerType="none"
             android:text="Current Time"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
             android:textColor="#616170"
+            android:textSize="36sp"
+            android:textStyle="bold|italic"
             android:visibility="visible" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
